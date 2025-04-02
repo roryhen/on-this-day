@@ -5,9 +5,10 @@ function EventCard({ year, desc, terms }) {
   let newDesc = desc;
   const newTerms = [];
   terms.forEach(({ title, wikipedia }) => {
+    console.log({ title, wikipedia, newDesc });
     let regexp = new RegExp(`(${title}s?)`, "gi");
     newDesc = reactStringReplace(newDesc, regexp, (match, i) => (
-      <a href={wikipedia} className="text-blue-700">
+      <a key={match + i} href={wikipedia} className="text-blue-700">
         {match}
       </a>
     ));

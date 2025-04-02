@@ -29,8 +29,8 @@ function App() {
   }, [data, year]);
 
   return (
-    <main className="max-w-screen-sm mx-auto p-4 pt-20  font-sans text-lg text-stone-700">
-      <h1 className="text-4xl font-sans font-bold mb-5">
+    <main className="max-w-screen-sm mx-auto p-4 pt-20 font-cabin text-lg text-stone-700">
+      <h1 className="text-4xl font-bold mb-5">
         On This Day -{" "}
         <span className="text-blue-900">
           {status === "success" && data.date}
@@ -46,9 +46,9 @@ function App() {
           </pre>
         )}
         {status === "success" && eventList
-          ? eventList.map((event, i) => (
+          ? eventList.map((event) => (
               <EventCard
-                key={i}
+                key={event.description}
                 year={event.year}
                 desc={event.description}
                 terms={event.wikipedia}
